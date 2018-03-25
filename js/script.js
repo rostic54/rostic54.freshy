@@ -14,7 +14,6 @@ function slider(){
                     settings:{
                         centerMode: true,
                     }
-
                 },
                 {
                     breakpoint: 992,
@@ -37,19 +36,15 @@ function initMap() {
         center: uluru,
         disableDefaultUI: true
     });
-
 }
 
 function pushBurger() {
     if( $('#burgerButton').length ) {
         $('#burgerButton').on('click', function () {
-
             var target = $(this);
             var span = target[0].querySelector('span');
             var burgerMenu = $('#burger-menu');
-
             span.classList.toggle('burger-btn--active');
-
             if (span.classList.contains('burger-btn--active')) {
                 $(burgerMenu).slideDown(300);
 
@@ -63,11 +58,9 @@ function pushBurger() {
 function closeBurger() {
     $('#burgerButton').children().removeClass('burger-btn--active');
     $('#burger-menu').css('display', 'none');
-
 }
 
 function scrollbarWith() {
-
     var $outer = $('<div>').css({visibility: 'hidden', width: 100, overflow: 'scroll'}).appendTo('body'),
         widthWithScroll = $('<div>').css({width: '100%'}).appendTo($outer).outerWidth();
     $outer.remove();
@@ -77,34 +70,26 @@ function scrollbarWith() {
 function testWidthWindow() {
     var scrollWidth = scrollbarWith();
     $(window).resize(function () {
-
         var widthWindow = $(document).innerWidth();
         if ( ( widthWindow + scrollWidth) > 768) {
             closeBurger();
-
         }
     });
 }
 
 function slowScrolling() {
-    $("#menu, #burger-menu, .footer-info__item").on("click", "a", function(event) {
-
+    $("#menu, #burger-menu, .scroll-js").on("click", "a", function(event) {
         event.preventDefault();
-
         var id = $(this).attr('href');
-
         if (id !== undefined) {
             var top = $(id).offset().top;
-
             if($(this).hasClass('hide-js')) {
                 closeBurger();
             }
             $('body,html').animate({ scrollTop: top }, 1500);
         }
     });
-};
-
-
+}
 
 $(document).ready( function () {
     slider();

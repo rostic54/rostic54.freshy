@@ -581,6 +581,9 @@ body {
 
 .article-about {
   margin-bottom: 170px; }
+  @media (max-width: 768px) {
+    .article-about {
+      margin-bottom: 100px; } }
 
 .picture {
   position: relative; }
@@ -605,6 +608,9 @@ body {
 .assortment {
   margin-bottom: 180px;
   text-align: center; }
+  @media (max-width: 768px) {
+    .assortment {
+      margin-bottom: 100px; } }
   .assortment__content {
     max-width: 600px;
     margin: 0 auto 30px; }
