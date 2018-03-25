@@ -157,18 +157,18 @@ input[type="search"],
 textarea,
 select,
 .input {
-  background-color: #fff;
-  border: 1px solid #bcbcbc;
-  color: #939393;
+  display: block;
+  width: 100%;
+  padding: 4px 10px;
   font-size: 13px;
   line-height: 21px;
-  padding: 4px 10px;
-  width: 100%;
-  display: block;
+  color: #939393;
+  background-color: #fff;
+  border: 1px solid #bcbcbc;
+  border-radius: 0;
   -webkit-transition: all .3s ease-in-out;
   transition: all .3s ease-in-out;
-  -webkit-appearance: none;
-  border-radius: 0; }
+  -webkit-appearance: none; }
   input[type="text"]::-webkit-input-placeholder,
   input[type="password"]::-webkit-input-placeholder,
   input[type="email"]::-webkit-input-placeholder,
@@ -414,6 +414,9 @@ body {
     padding: 10px;
     background-color: #3296c6;
     border-radius: 5px; }
+    @media (max-width: 576px) {
+      .header__phone {
+        font-size: 18px; } }
   .header__phone-link {
     font-size: 14px;
     font-weight: bold; }
@@ -629,12 +632,12 @@ body {
       display: block; }
   .slider-box__content {
     position: absolute;
-    text-align: center;
     top: 50%;
     left: 20px;
     right: 20px;
     color: #fff;
     font-size: 18px;
+    text-align: center;
     font-weight: bold;
     -webkit-transform: translateY(-50%);
         -ms-transform: translateY(-50%);
