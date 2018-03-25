@@ -60,14 +60,27 @@ function pushBurger() {
         });
     }
 }
+function closeBurger() {
+    $('#burgerButton').children().removeClass('burger-btn--active');
+    $('#burger-menu').css('display', 'none');
+
+}
+
+function scrollbarWith() {
+
+    var $outer = $('<div>').css({visibility: 'hidden', width: 100, overflow: 'scroll'}).appendTo('body'),
+        widthWithScroll = $('<div>').css({width: '100%'}).appendTo($outer).outerWidth();
+    $outer.remove();
+    return 100 - widthWithScroll;
+}
+
 function testWidthWindow() {
-
+    var scrollWidth = scrollbarWith();
     $(window).resize(function () {
-        var widthWindow = $('body').innerWidth();
-        if (widthWindow > 768) {
 
-            $('#burgerButton').children().removeClass('burger-btn--active');
-            $('#burger-menu').css('display', 'none');
+        var widthWindow = $(document).innerWidth();
+        if ( ( widthWindow + scrollWidth) > 768) {
+            closeBurger();
 
         }
     });
@@ -79,11 +92,13 @@ function slowScrolling() {
         event.preventDefault();
 
         var id = $(this).attr('href');
-        var menu = $('#menu');
 
         if (id !== undefined) {
             var top = $(id).offset().top;
 
+            if($(this).hasClass('hide-js')) {
+                closeBurger();
+            }
             $('body,html').animate({ scrollTop: top }, 1500);
         }
     });

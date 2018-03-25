@@ -299,11 +299,8 @@ button,
       outline: transparent; }
 
 .btn {
-  -webkit-box-shadow: 3px 3px 2px #858585;
-          box-shadow: 3px 3px 2px #858585; }
-  .btn:focus {
-    -webkit-box-shadow: none;
-            box-shadow: none; }
+  -webkit-box-shadow: 2px 2px 5px #858585;
+          box-shadow: 2px 2px 5px #858585; }
 
 input[type="checkbox"] {
   position: absolute;
